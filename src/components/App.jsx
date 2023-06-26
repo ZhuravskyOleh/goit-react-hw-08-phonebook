@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router";
 import { Phonebook } from "./Pages/Phonebook";
 import SignIn from "./Pages/SingIn";
 import SignUp from "./Pages/SingUp";
+import { Layout } from "./Layout/Layout";
 
 
 export const App = () => {
@@ -10,6 +11,7 @@ export const App = () => {
   return (
     <div>
       <Routes>
+        <Route path="/" element={<Layout />} />
         <Route path="/contacts" element={<Phonebook />} />
         <Route path="/login" element={<SignIn/>} />
         <Route path="/register" element={<SignUp/>} />

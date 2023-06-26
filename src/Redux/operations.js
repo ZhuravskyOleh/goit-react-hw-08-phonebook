@@ -3,6 +3,14 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://648d6e862de8d0ea11e7d5f3.mockapi.io';
 
+const instance = axios.create({
+	baseURL: 'https://connections-api.herokuapp.com',
+})
+
+export const signUp = async (body) => {
+	return await instance.post('/users/signup', body)
+}
+
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
   async (_, thunkAPI) => {
