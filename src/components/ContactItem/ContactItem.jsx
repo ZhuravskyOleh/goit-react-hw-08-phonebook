@@ -27,7 +27,6 @@ function ContactItem({ name, number, id }) {
       sx={{
         display: 'flex',
         flexWrap: 'wrap',
-        justifyContent:'center',
         '& > :not(style)': {
           m: 1,
           // width: 128,
@@ -36,7 +35,7 @@ function ContactItem({ name, number, id }) {
         },
       }}
     >
-      <Paper elevation={6}>
+      <Paper elevation={6} >
         <Typography component="h1" variant="h5" align='center'>
           {name}
         </Typography>

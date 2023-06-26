@@ -4,6 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Form } from './ContactForm.styled';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 
 function ContactForm() {
   const dispatch = useDispatch();
@@ -59,3 +64,5 @@ function ContactForm() {
 }
 
 export default ContactForm;
+
+
