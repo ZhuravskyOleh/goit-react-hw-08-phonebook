@@ -1,25 +1,17 @@
-import { ContactStyle } from './ContactList.styled';
-import { ContactItem } from 'components/ContactListItem/ContactListItem';
+import { Ul } from './ContactList.styled';
+import ContactItem from 'components/ContactItem/ContactItem';
 import { useSelector } from 'react-redux';
-import { selectVisibleContacts } from 'Redux/selectors';
+import { selectVisibleContacts } from 'redux//contacts/selectors';
 
-export const ContactList = () => {
+function ContactList() {
   const visibleContacts = useSelector(selectVisibleContacts);
-
   return (
-    <ContactStyle>
+    <Ul>
       {visibleContacts.map(({ name, id, number }) => (
-        <ContactItem
-          id={id}
-          key={id}
-          number={number}
-          name={name}
-          
-        />
+        <ContactItem id={id} key={id} number={number} name={name} />
       ))}
-    </ContactStyle>
+    </Ul>
   );
 }
 
-
-
+export default ContactList;

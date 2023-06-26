@@ -1,15 +1,19 @@
-import Header from 'components/AppBar/AppBar';
-import React, { Suspense } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
 
+import AppBar from 'components/AppBar/AppBar';
 
-export const Layout = () => {
+import MUI from 'components/MUI';
+
+export default function Layout() {
   return (
     <>
-      <Header />
-      <Suspense fallback={<div>Loading...</div>}>
-        <Outlet />
-      </Suspense>
+      <AppBar />
+      <MUI.Container sx={{ marginTop: '120px' }}>
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <Outlet />
+        </Suspense>
+      </MUI.Container>
     </>
   );
-};
+}

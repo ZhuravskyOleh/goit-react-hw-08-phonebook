@@ -1,25 +1,22 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import { useNavigate } from 'react-router-dom';
+import useAuth from 'hooks/useAuth';
+import UserMenu from 'components/UserMenu/UserMenu';
+import AuthNav from 'components/AuthNav/AuthNav';
+import Navigation from 'components/Navigation/Navigation';
+import MUI from 'components/MUI';
 
-export default function Header() {
-    const navigate = useNavigate()
+export default function AppBar() {
+  const { isLoggedIn } = useAuth();
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Phonebook
-          </Typography>
-          <Button color="inherit" onClick={()=>{navigate('/login')}}>Login</Button>
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <MUI.AppBar>
+      <MUI.Container
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+        }}
+      >
+        <Navigation />
+        <MUI.Toolbar>{isLoggedIn ? <UserMenu /> : <AuthNav />}</MUI.Toolbar>
+      </MUI.Container>
+    </MUI.AppBar>
   );
 }

@@ -1,9 +1,6 @@
-import styled from "@emotion/styled";
+import styled from 'styled-components';
 
-export const ContactStyle = styled.ul`
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-   
-    flex-wrap: wrap;
-`
+export const Ul = styled.ul`
+  width: max-content;
+  border: 1px solid black;
+`;

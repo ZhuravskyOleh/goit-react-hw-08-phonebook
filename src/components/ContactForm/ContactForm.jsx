@@ -1,20 +1,23 @@
 import { nanoid } from '@reduxjs/toolkit';
+import Notiflix from 'notiflix';
 import { useDispatch, useSelector } from 'react-redux';
-import { Form, Label, Input, Button } from './ContactForm.styled';
-import { addContact } from 'Redux/operations';
-import { selectContacts } from 'Redux/selectors';
+import { Form } from './ContactForm.styled';
+import { addContact } from 'redux/contacts/operations';
+import { selectContacts } from 'redux/contacts/selectors';
 
-export const ContactForm = () => {
+function ContactForm() {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
 
   const handlerSubmit = e => {
-    console.log(contacts);
     e.preventDefault();
 
     const name = e.target.elements.name.value;
     if (contacts.find(el => el.name === name)) {
-      alert(name + ' already exists in the phone book');
+      Notiflix.Notify.warning(
+        'Name "' + name + '" already exists in the phone book'
+      );
+
       e.target.reset();
       return;
     }
@@ -30,8 +33,8 @@ export const ContactForm = () => {
 
   return (
     <Form onSubmit={handlerSubmit}>
-      <Label htmlFor="name">Name </Label>
-      <Input
+      <label htmlFor="name">Name </label>
+      <input
         id="name"
         type="text"
         name="name"
@@ -40,8 +43,8 @@ export const ContactForm = () => {
         required
       />
 
-      <Label htmlFor="tel">Number </Label>
-      <Input
+      <label htmlFor="tel">Number </label>
+      <input
         id="tel"
         type="tel"
         name="number"
@@ -50,7 +53,9 @@ export const ContactForm = () => {
         required
       />
       <br />
-      <Button type="submit">Add contact</Button>
+      <button type="submit">Add contact</button>
     </Form>
   );
-};
+}
+
+export default ContactForm;
