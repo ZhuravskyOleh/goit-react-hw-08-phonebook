@@ -1,21 +1,24 @@
 import { useDispatch } from 'react-redux';
 import { setFilter } from 'redux/contacts/filterSlice';
-import { Label } from './Filter.styled';
+import MUI from 'components/MUI';
 
 function Filter() {
   const dispatch = useDispatch();
-  const handlerChangeFilter = e => {
+  const handleChangeFilter = e => {
     dispatch(setFilter(e.target.value.toLowerCase().trim()));
   };
   return (
     <>
-      <Label htmlFor="filter">Find contacts by name:</Label>
-      <input
-        id="filter"
-        type="text"
-        name="filter"
-        onChange={handlerChangeFilter}
-      />
+      <MUI.Box mt={3}>
+        <MUI.TextField
+          fullWidth
+          id="filter"
+          type="text"
+          name="filter"
+          label='Find contacts'
+          onChange={handleChangeFilter}
+        />
+      </MUI.Box>
     </>
   );
 }
