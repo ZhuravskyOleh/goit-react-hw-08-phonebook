@@ -50,16 +50,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://ZhuravskyOleh.github.io/goit-react-hw-08-phonebook.git"
-  },
-  "keywords": [],
-  "author": "ZhuravskyOleh",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://ZhuravskyOleh.github.io/goit-react-hw-08-phonebook/issues"
   }
 }
