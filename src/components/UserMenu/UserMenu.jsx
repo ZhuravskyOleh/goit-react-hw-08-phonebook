@@ -17,8 +17,8 @@ export default function UserMenu() {
           alignItems: 'center',
         }}
       >
-        <MUI.Box>
-          <p>Hi, {user.name} !</p>
+        <MUI.Box sx={{ display: 'flex', gap:2}}>
+          <p>Hi, {user.name}!!!</p>
           <p>Email: {user.email}</p>
         </MUI.Box>
         <MUI.Button
