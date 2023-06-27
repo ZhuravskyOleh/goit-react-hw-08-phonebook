@@ -1,20 +1,11 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/authOperations';
-import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import MUI from 'components/MUI';
 
 
-const defaultTheme = createTheme();
+const defaultTheme = MUI.createTheme();
 
 export default function Login() {
    const dispatch = useDispatch();
@@ -40,10 +31,10 @@ export default function Login() {
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <Box
+    <MUI.ThemeProvider theme={defaultTheme}>
+      <MUI.Container component="main" maxWidth="xs">
+        <MUI.CssBaseline />
+        <MUI.Box
           sx={{
             marginTop: 8,
             display: 'flex',
@@ -51,16 +42,16 @@ export default function Login() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <MUI.Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
+          </MUI.Avatar>
+          <MUI.Typography component="h1" variant="h5">
             Sign in
-          </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <TextField
+          </MUI.Typography>
+          <MUI.Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+            <MUI.Grid container spacing={2}>
+              <MUI.Grid item xs={12}>
+                <MUI.TextField
                   required
                   fullWidth
                   id="email"
@@ -69,9 +60,9 @@ export default function Login() {
                   onChange={handleChange}
                   autoComplete="email"
                 />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
+              </MUI.Grid>
+              <MUI.Grid item xs={12}>
+                <MUI.TextField
                   required
                   fullWidth
                   name="password"
@@ -81,19 +72,19 @@ export default function Login() {
                   onChange={handleChange}
                   autoComplete="new-password"
                 />
-              </Grid>
-            </Grid>
-            <Button
+              </MUI.Grid>
+            </MUI.Grid>
+            <MUI.Button
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
               Sign in
-            </Button>
-          </Box>
-        </Box>
-      </Container>
-    </ThemeProvider>
+            </MUI.Button>
+          </MUI.Box>
+        </MUI.Box>
+      </MUI.Container>
+    </MUI.ThemeProvider>
   );
 }

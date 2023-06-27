@@ -1,14 +1,10 @@
-import { Item } from './ContactItem.styled';
 import { deleteContact } from 'redux/contacts/operations';
-
+import MUI from 'components/MUI';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import { Button, IconButton, Typography } from '@mui/material';
-import  DeleteIcon  from '@mui/icons-material';
+
+
 
 function ContactItem({ name, number, id }) {
   const dispatch = useDispatch();
@@ -17,13 +13,7 @@ function ContactItem({ name, number, id }) {
   };
 
   return (
-    // <Item>
-    //   <p>
-    //     {name}: {number}
-    //   </p>
-    //   <button onClick={onDelete}>Delete</button>
-    // </Item>
-    <Box
+    <MUI.Box
       sx={{
         display: 'flex',
         flexWrap: 'wrap',
@@ -35,19 +25,19 @@ function ContactItem({ name, number, id }) {
         },
       }}
     >
-      <Paper elevation={6} >
-        <Typography component="h1" variant="h5" align='center'>
+      <MUI.Paper elevation={6} >
+        <MUI.Typography component="h1" variant="h5" align='center'>
           {name}
-        </Typography>
-        <Typography component="p" align='center'>
+        </MUI.Typography>
+        <MUI.Typography component="p" align='center'>
           {number}
-        </Typography>
-        <Button variant="outlined" onClick={onDelete}>
+        </MUI.Typography>
+        <MUI.Button variant="outlined" onClick={onDelete}>
           Delete
-        </Button>
+        </MUI.Button>
 
-      </Paper>
-    </Box>
+      </MUI.Paper>
+    </MUI.Box>
   );
 }
 ContactItem.propTypes = {

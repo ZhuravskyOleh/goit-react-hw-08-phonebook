@@ -8,6 +8,12 @@ import {
   Button,
   TextField,
   Icon,
+  CssBaseline,
+  Grid,
+  ThemeProvider,
+  createTheme,
+  Paper,
+  Avatar,
 } from '@mui/material';
 
 const MUI = {
@@ -20,5 +26,11 @@ const MUI = {
   Button,
   TextField,
   Icon,
+  CssBaseline,
+  Grid,
+  ThemeProvider,
+  createTheme,
+  Paper,
+  Avatar
 };
 export default MUI;

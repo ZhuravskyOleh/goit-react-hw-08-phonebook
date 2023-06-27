@@ -3,10 +3,8 @@ import Notiflix from 'notiflix';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import { Container, CssBaseline, Grid, TextField, ThemeProvider, Typography, createTheme } from '@mui/material';
+import MUI from 'components/MUI';
+
 
 function ContactForm() {
   const dispatch = useDispatch();
@@ -33,17 +31,17 @@ function ContactForm() {
     dispatch(addContact(newContact));
     e.target.reset();
   };
-const defaultTheme = createTheme();
+const defaultTheme = MUI.createTheme();
 
 
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <Typography variant="h5" textAlign={'center'}>
+    <MUI.ThemeProvider theme={defaultTheme}>
+      <MUI.Typography variant="h5" textAlign={'center'}>
         Add contact
-      </Typography>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <Box
+      </MUI.Typography>
+      <MUI.Container component="main" maxWidth="xs">
+        <MUI.CssBaseline />
+        <MUI.Box
           sx={{
             // marginTop: 8,
             display: 'flex',
@@ -52,10 +50,10 @@ const defaultTheme = createTheme();
           }}
         >
           
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <TextField
+          <MUI.Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+            <MUI.Grid container spacing={2}>
+              <MUI.Grid item xs={12}>
+                <MUI.TextField
                   required
                   fullWidth
                   id="name"
@@ -66,9 +64,9 @@ const defaultTheme = createTheme();
                   title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                   autoComplete="email"
                 />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
+              </MUI.Grid>
+              <MUI.Grid item xs={12}>
+                <MUI.TextField
                   required
                   fullWidth
                   id="tel"
@@ -79,20 +77,20 @@ const defaultTheme = createTheme();
                   title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                   autoComplete="new-password"
                 />
-              </Grid>
-            </Grid>
-            <Button
+              </MUI.Grid>
+            </MUI.Grid>
+            <MUI.Button
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
               Add
-            </Button>
-          </Box>
-        </Box>
-      </Container>
-    </ThemeProvider>
+            </MUI.Button>
+          </MUI.Box>
+        </MUI.Box>
+      </MUI.Container>
+    </MUI.ThemeProvider>
   );
 }
 

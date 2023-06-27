@@ -5,12 +5,12 @@ export default function Home() {
     <>
       <MUI.Typography
         variant="h2"
-        sx={{ fontSize: '14vw', textAlign: 'center' }}
+        sx={{ textAlign: 'center' }}
       >
-        Phonebook
+       Home page
       </MUI.Typography>
 
-      <MenuBookIcon color="info" sx={{ width: '100%', height: '70vh' }} />
+      {/* <MenuBookIcon color="info" sx={{ width: '100%', height: '70vh' }} /> */}
     </>
   );
 }

@@ -1,4 +1,4 @@
-import { Box, Grid } from '@mui/material';
+import MUI from 'components/MUI';
 import ContactForm from 'components/ContactForm/ContactForm';
 import ContactList from 'components/ContactList/ContactList';
 import Filter from 'components/Filter/Filter';
@@ -21,18 +21,18 @@ export default function Contacts() {
       <Filter />
       <ContactList />
       {isLoading && <p>Loading...</p>} */}
-      <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2} columns={16}>
-        <Grid item xs={5}>
+      <MUI.Box sx={{ flexGrow: 1 }}>
+      <MUI.Grid container spacing={2} columns={16}>
+        <MUI.Grid item xs={5}>
             <ContactForm />
             <Filter />
-        </Grid>
-          <Grid item xs={8}>
+        </MUI.Grid>
+          <MUI.Grid item xs={8}>
             <ContactList />
             {isLoading && <p>Loading...</p>}
-        </Grid>
-      </Grid>
-    </Box>
+        </MUI.Grid>
+      </MUI.Grid>
+    </MUI.Box>
       
     </div>
   );

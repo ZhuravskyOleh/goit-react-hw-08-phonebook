@@ -9,7 +9,7 @@ export default function Navigation() {
   const { isLoggedIn } = useAuth();
   return (
     <MUI.Toolbar>
-      {/* <NavLink to="/">
+      <NavLink to="/">
         <MUI.Button
           startIcon={<HomeIcon />}
           sx={{ color: 'white' }}
@@ -17,7 +17,7 @@ export default function Navigation() {
         >
           Home
         </MUI.Button>
-      </NavLink> */}
+      </NavLink>
       {isLoggedIn && (
         <NavLink to="/contacts">
           <MUI.Button
