@@ -5,7 +5,7 @@ import Layout from 'components/Layout/Layout';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchCurrentUser } from 'redux/auth/authOperations';
-import RestrictedRoute from 'components/RestrictedRoute';
+import PublickRoute from 'components/PublickRoute';
 import PrivateRoute from 'components/PrivateRoute';
 
 import useAuth from 'hooks/useAuth';
@@ -30,7 +30,7 @@ function App() {
           <Route
             path="/register"
             element={
-              <RestrictedRoute
+              <PublickRoute
                 component={<RegisterForm />}
                 redirectTo="/contacts"
               />
@@ -39,7 +39,7 @@ function App() {
           <Route
             path="/login"
             element={
-              <RestrictedRoute component={<Login />} redirectTo="/contacts" />
+              <PublickRoute component={<Login />} redirectTo="/contacts" />
             }
           />
           <Route
